@@ -25,7 +25,7 @@
 
     
     <script>
-    // Filter out some special characters.
+    // Filter out some special characters and convert a string to integer.
     function inputFilter(value) {
         if (/^[-+]?(\d+|Infinity)$/.test(value)) {
             return Number(value)} 
@@ -35,20 +35,21 @@
     }
     // Prompt the loop to enter a positive number.
     promt4Loop:for (;;) {
-    var text = prompt('Enter a positive integer');
+    var text = prompt("Enter a positive integer");
     var n = inputFilter(text);
     var prime = [];
         if (!isNaN(n)&&n>0) break;
     }
-    // Show the prime numbers of the input number.
+    // Show the prime numbers of the input number via alert.
     function showPrime(n) {
         for (let i = 2; n>i; i++){
-            if(!isPrime(i)) continue;
-                else if(isPrime(i)){
-                    prime.push(i)
-                }   
+            if(!isPrime(i)) 
+                continue;
+                    else if(isPrime(i)){
+                        prime.push(i)
+                    }   
         }
-    alert("The prime numbers of " + n + ' are '+ prime)
+    alert("The prime numbers of " + n + " are "+ prime)
     }
     // Check the input that have the prime numbers or not.
     function isPrime(n) {
